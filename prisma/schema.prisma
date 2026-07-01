@@ -32,4 +32,41 @@ model User {
 
 
 
+model NotificationDelivery {
+  id          String @id @default(uuid())
+    notificationId String
+notificationPreferenceId String
+channelSnapshot String
+destinationSnapshot String
+status String
+sentAt DateTime @default(now()) @db.Timestamptz(3)
+deliveredAt DateTime @db.Timestamptz(3)
+errorCode String
+errorMessage String
+}
+
+
+
+
+model NotificationPreference {
+  Id          String @id @default(uuid())
+userId String
+channel String
+configId String
+enabled Boolean
+}
+
+
+model NotificationConfig {
+  Id          String @id @default(uuid())
+userId String
+config Json
+enabled Boolean
+createdAt DateTime @default(now()) @db.Timestamptz(3)
+updatedAt DateTime @db.Timestamptz(3)
+}
+
+
+
+
 
