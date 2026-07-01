@@ -11,3 +11,25 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model Notification {
+  id          String   @id @default(uuid())
+  userId      String
+  configId    String
+  configSnapshot      Json
+  eventPayload     Json
+    createdAt      DateTime @default(now()) @db.Timestamptz(3)
+}
+
+
+model User {
+  userId          String @id
+  name            String
+  email           String
+  phoneNumber     String
+  whatsappNumber  String
+}
+
+
+
+
