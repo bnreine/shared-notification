@@ -22,13 +22,7 @@ model Notification {
 }
 
 
-model User {
-  userId          String @id
-  name            String
-  email           String
-  phoneNumber     String
-  whatsappNumber  String
-}
+
 
 
 
