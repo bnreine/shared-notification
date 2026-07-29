@@ -110,5 +110,9 @@
         ]
       }
     ]
+  },
+  "hosted-zone:account=010273536955:domainName=benjaminreinecke.click:region=us-east-1": {
+    "Id": "/hostedzone/Z036869325I4R84N116BR",
+    "Name": "benjaminreinecke.click."
   }
 }
