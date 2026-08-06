@@ -47,7 +47,6 @@ model NotificationPreference {
 userId String
 channel String
 configId String
-enabled Boolean
 }
 
 
