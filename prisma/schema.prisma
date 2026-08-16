@@ -59,7 +59,25 @@ createdAt DateTime @default(now()) @db.Timestamptz(3)
 updatedAt DateTime @db.Timestamptz(3)
 }
 
+model OAuthState {
+  id          String @id @default(uuid())
+    userId String
+provider String
+stateHash String
+metadata Json
+expiresAt DateTime @db.Timestamptz(3)
+usedAt DateTime @db.Timestamptz(3)
+createdAt DateTime @db.Timestamptz(3)
+}
 
-
+model OAuthConnection {
+  id          String @id @default(uuid())
+    userId String
+provider String
+providerAccountId String
+metadata Json
+usedAt DateTime @db.Timestamptz(3)
+createdAt DateTime @db.Timestamptz(3)
+}
 
 
