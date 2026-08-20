@@ -47,6 +47,7 @@ model NotificationPreference {
 userId String
 channel String
 configId String
+destinationId String?
 }
 
 
@@ -76,11 +77,20 @@ model OAuthConnection {
     userId String
 provider String
 providerAccountId String
-metadata Json
+channelType String
+authData Json
 createdAt DateTime @db.Timestamptz(3)
 }
 
+model Destination {
+  id          String @id @default(uuid())
+    userId String
+channelType String
+createdAt DateTime @db.Timestamptz(3)
+metadata Json
+oAuthConnectionId String?
 
+}
 
 
 
