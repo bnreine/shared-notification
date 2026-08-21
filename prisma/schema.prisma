@@ -77,7 +77,6 @@ model OAuthConnection {
     userId String
 provider String
 providerAccountId String
-channelType String
 authData Json
 createdAt DateTime @db.Timestamptz(3)
 }
