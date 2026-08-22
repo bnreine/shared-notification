@@ -44,8 +44,6 @@ errorMessage String
 
 model NotificationPreference {
   Id          String @id @default(uuid())
-userId String
-channel String
 configId String
 destinationId String?
 }
