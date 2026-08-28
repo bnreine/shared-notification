@@ -91,3 +91,19 @@ oAuthConnectionId String?
 
 
 
+model Consent {
+  id          String @id @default(uuid())
+    destinationId String
+status String
+createdAt DateTime @db.Timestamptz(3)
+updatedAt DateTime @db.Timestamptz(3)
+}
+
+
+model ConsentEvent {
+  id          String @id @default(uuid())
+    destinationId String
+status String
+createdAt DateTime @db.Timestamptz(3)
+}
+
