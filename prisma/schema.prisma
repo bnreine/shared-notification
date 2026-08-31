@@ -46,6 +46,8 @@ model NotificationPreference {
   Id          String @id @default(uuid())
 configId String
 destinationId String?
+
+@@unique([destinationId, configId], map: "preference_destination_configId_unique")
 }
 
 
@@ -93,7 +95,7 @@ oAuthConnectionId String?
 
 model Consent {
   id          String @id @default(uuid())
-    destinationId String
+    destinationId String @unique(map: "consent_destination_unique")
 status String
 createdAt DateTime @db.Timestamptz(3)
 updatedAt DateTime @db.Timestamptz(3)
