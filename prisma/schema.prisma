@@ -79,6 +79,8 @@ provider String
 providerAccountId String
 authData Json
 createdAt DateTime @db.Timestamptz(3)
+
+@@unique([userId, provider, providerAccountId], map: "userId_provider_providerAccountId_unique")
 }
 
 model Destination {
