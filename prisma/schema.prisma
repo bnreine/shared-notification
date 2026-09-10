@@ -111,3 +111,24 @@ status String
 createdAt DateTime @db.Timestamptz(3)
 }
 
+
+model Verify {
+  id          String @id @default(uuid())
+    destinationId String @unique(map: "verify_destination_unique")
+status String
+createdAt DateTime @db.Timestamptz(3)
+updatedAt DateTime @db.Timestamptz(3)
+provider String
+providerId String
+}
+
+
+model VerifyEvent {
+  id          String @id @default(uuid())
+    verifyId String
+status String
+createdAt DateTime @db.Timestamptz(3)
+}
+
+
+
