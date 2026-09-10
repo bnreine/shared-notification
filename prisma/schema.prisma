@@ -88,8 +88,10 @@ model Destination {
     userId String
 channelType String
 createdAt DateTime @db.Timestamptz(3)
+updatedAt DateTime @db.Timestamptz(3)
 metadata Json
 oAuthConnectionId String?
+deleted Boolean?
 
 }
 
