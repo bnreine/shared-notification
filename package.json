@@ -5,7 +5,12 @@
     "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
     "cdk": "cdk",
     "test": "jest",
-    "prettier": "prettier --config package.json --write ."
+    "prettier": "prettier --config package.json --write .",
+    "startDevDB": "docker compose -f docker-compose.dev.yml up -d",
+    "stopDevDB": "docker compose -f docker-compose.dev.yml down",
+    "startTestDB": "docker compose -f docker-compose.test.yml up -d",
+    "runTestDBMigrationDeploy": "npx prisma migrate deploy",
+    "stopTestDB": "docker compose -f docker-compose.test.yml down"
   },
   "devDependencies": {
     "dotenv": "^17.4.2",
