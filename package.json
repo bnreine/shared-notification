@@ -10,7 +10,9 @@
     "stopDevDB": "docker compose -f docker-compose.dev.yml down",
     "startTestDB": "docker compose -f docker-compose.test.yml up -d",
     "runTestDBMigrationDeploy": "npx prisma migrate deploy",
-    "stopTestDB": "docker compose -f docker-compose.test.yml down"
+    "stopTestDB": "docker compose -f docker-compose.test.yml down",
+    "createDevNetwork": "docker network create notifications-dev",
+    "removeDevNetwork": "docker network rm notifications-dev"
   },
   "devDependencies": {
     "dotenv": "^17.4.2",
